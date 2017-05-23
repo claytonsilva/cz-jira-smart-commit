@@ -1,6 +1,6 @@
 {
   "name": "cz-taiga-smart-commit",
-  "version": "2.0.1",
+  "version": "1.0.0",
   "description": "A commitizen adapter for Taiga",
   "main": "index.js",
   "scripts": {

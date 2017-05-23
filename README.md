@@ -1,20 +1,20 @@
 # cz-jira-smart-commit
 
-A commitizen adapter for [Taiga](https://tree.taiga.io/support/integrations/changing-elements-status-via-commit-message/).
+Adaptador do Commitzen para o [Taiga](https://tree.taiga.io/support/integrations/changing-elements-status-via-commit-message/).
 
 ![Screenshot](other/screenshot.png)
 
-## Usage
+## Como usar
 
-### Add this adapter
+### Adicione o adaptador
 
-Install this adapter
+Instale pelo npm 
 
 ```
 npm install cz-taiga-smart-commit
 ```
 
-Reference it in your `.cz.json` of your project
+Cite referencia no `.cz.json` do seu projeto 
 
 ```json
 {
@@ -22,21 +22,26 @@ Reference it in your `.cz.json` of your project
 }
 ```
 
-or use commitizen to init
+ou aplique commitzen init
 ```
 commitizen init cz-jira-smart-commit
 ```
 
+ou adicione no seu package.json
+```json
+"commitizen": {
+      "path": "./index"
+}
+```
 
-### Day to day work
+### Modo de trabalho
 
-Instead of `git commit -m 'Your message'`, you type: `git cz` with this adapter and it prompts you for:
-
+Ao invés de  `git commit -m 'Sua mensagem'`, utilize: `git cz` que o adaptador irá construir a mensagem para você, usando:
+- type of commit
+- scope of commit
 - commit message
-- Jira Issue Key(s)
-- Workflow command
-- Time Spent
-- Comment
+- commit long description
+- breaking changes
+- Taiga task number
 
-And generates your commit based on that.
 
