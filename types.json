@@ -22,16 +22,16 @@
 			"description": "Adição/Edição de testes"
 		},
 		"build": {
-			"description": "Changes that affect the build system or external dependencies (example scopes: gulp, broccoli, npm)"
+			"description": "Mudanças que afetam ferramentas de construção (exemplos: gulp, broccoli, npm)"
 		},
 		"ci": {
-			"description": "Changes to our CI configuration files and scripts (example scopes: Travis, Circle, BrowserStack, SauceLabs)"
+			"description": "Alterações no script de integração Contínua (exemplos: Travis, Circle, BrowserStack, SauceLabs)"
 		},
 		"chore": {
-			"description": "Other changes that don't modify src or test files"
+			"description": "Outras mudanças que não foram mapeadas pela listagem"
 		},
 		"revert": {
-			"description": "Reverts a previous commit"
+			"description": "Revertendo commit anterior"
 		}
 	}
 }

@@ -60,33 +60,33 @@ module.exports = function ( options ) {
         {
           type: 'list',
           name: 'type',
-          message: 'Select the type of change that you\'re committing:',
+          message: 'Selecione o tipo de alteração que está propondo:',
           choices: choices
         }, {
           type: 'input',
           name: 'scope',
-          message: 'Denote the scope of this change ($location, $browser, $compile, etc.):\n'
+          message: 'Delimite a região onde está alterando ($location, $browser, $compile, etc.):\n'
         }, {
           type: 'input',
           name: 'subject',
-          message: 'Write a short, imperative tense description of the change:\n'
+          message: 'Descrição curta da alteração:\n'
         }, {
           type: 'input',
           name: 'body',
-          message: 'Provide a longer description of the change:\n'
+          message: 'Descrição detalhada da alteração:\n'
         }, {
           type: 'input',
           name: 'breaking',
-          message: 'List any breaking changes:\n'
+          message: 'Lista de "Breaking Changes":\n'
         }, {
           type: 'input',
           name: 'issues',
-          message: 'List any issues closed by this change:\n'
+          message: 'Tarefas (problemas/ estorias de usuário / tarefas) relacionadas a mudança (separados pelo espaço e somente o número) :\n'
         }
         , {
           type: 'list',
           name: 'action',
-          message: 'Desired action for this issue (closed, ready-for-test):\n',
+          message: 'Status que deseja relacionar as tarefas  ( new, in-progress, closed, ready-for-test):\n',
           choices: statusChoices
         }
       ] ).then( function ( answers ) {
@@ -116,9 +116,12 @@ module.exports = function ( options ) {
         breaking = wrap( breaking, wrapOptions );
         var issues = wrap( answers.issues, wrapOptions );
         
-        if (answers.status) {
-          answers.issues.map( function ( el ) { 'TG-' +  el + ' ' + '#' + answers.status + '\n' } )
-        }
+        let issuesFormated = ''
+				if (answers.status) {
+          issuesFormated = answers.issues.split(' ').map( function ( el ) { 'TG-' +  el + ' ' + '#' + answers.status + '\n' } )
+        } else {
+					issuesFormated = answers.issues.split(' ').map( function ( el ) { 'TG-' +  el + '\n' } )
+				}
         
         var footer = filter( [ breaking, issues ] ).join( '\n\n' );
 
