@@ -121,6 +121,7 @@ module.exports = function ( options ) {
 					issuesFormated = issues.split(' ').map( function ( el ) { return 'TG-' +  el + '\n' } )
 				}
 
+
         var footer = filter( [ breaking, issuesFormated ] ).join( '\n\n' );
 
         commit( head + '\n\n' + body + '\n\n' + footer );
