@@ -116,14 +116,11 @@ module.exports = function ( options ) {
         var issues = wrap( answers.issues, wrapOptions );
         let issuesFormated = ''
 				if (answers.action && issues) {
-          issuesFormated = issues.split(' ').map( function ( el ) { 'TG-' +  el + ' ' + '#' + answers.action + '\n' } )
+          issuesFormated = issues.split(' ').map( function ( el ) { return 'TG-' +  el + ' ' + '#' + answers.action + '\n' } )
         } else if  (issues) {
-					issuesFormated = issues.split(' ').map( function ( el ) { 'TG-' +  el + '\n' } )
-				} else {
-					console.warn('caiu no else')	
+					issuesFormated = issues.split(' ').map( function ( el ) { return 'TG-' +  el + '\n' } )
 				}
-				console.warn(issuesFormated)
-        
+				
         var footer = filter( [ breaking, issuesFormated ] ).join( '\n\n' );
 
         commit( head + '\n\n' + body + '\n\n' + footer );
