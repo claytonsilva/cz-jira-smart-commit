@@ -110,6 +110,12 @@ module.exports = function ( options ) {
         // Wrap these lines at 100 characters
         var body = wrap( answers.body, wrapOptions );
 
+				console.warn('------')
+				console.warn(answers.action)
+				console.warn('------')
+				console.warn(answers.issues)
+				
+
         // Apply breaking change prefix, removing it if already present
         var breaking = answers.breaking.trim();
         breaking = breaking ? 'BREAKING CHANGE: ' + breaking.replace( /^BREAKING CHANGE: /, '' ) : '';
