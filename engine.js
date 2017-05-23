@@ -114,14 +114,15 @@ module.exports = function ( options ) {
         breaking = breaking ? 'BREAKING CHANGE: ' + breaking.replace( /^BREAKING CHANGE: /, '' ) : '';
         breaking = wrap( breaking, wrapOptions );
         var issues = wrap( answers.issues, wrapOptions );
-
-				console.warn(issues)
         let issuesFormated = ''
 				if (answers.action && issues) {
           issuesFormated = issues.split(' ').map( function ( el ) { 'TG-' +  el + ' ' + '#' + answers.action + '\n' } )
         } else if  (issues) {
 					issuesFormated = issues.split(' ').map( function ( el ) { 'TG-' +  el + '\n' } )
+				} else {
+					console.warn('caiu no else')	
 				}
+				console.warn(issuesFormated)
         
         var footer = filter( [ breaking, issuesFormated ] ).join( '\n\n' );
 
