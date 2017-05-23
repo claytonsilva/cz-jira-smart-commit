@@ -117,13 +117,13 @@ module.exports = function ( options ) {
         var issues = wrap( answers.issues, wrapOptions );
         
         let issuesFormated = ''
-				if (answers.status) {
+				if (answers.status && answers.issues) {
           issuesFormated = answers.issues.split(' ').map( function ( el ) { 'TG-' +  el + ' ' + '#' + answers.status + '\n' } )
         } else {
 					issuesFormated = answers.issues.split(' ').map( function ( el ) { 'TG-' +  el + '\n' } )
 				}
         
-        var footer = filter( [ breaking, issues ] ).join( '\n\n' );
+        var footer = filter( [ breaking, issuesFormated ] ).join( '\n\n' );
 
         commit( head + '\n\n' + body + '\n\n' + footer );
       } );
