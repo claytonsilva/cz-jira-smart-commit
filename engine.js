@@ -109,25 +109,18 @@ module.exports = function ( options ) {
 
         // Wrap these lines at 100 characters
         var body = wrap( answers.body, wrapOptions );
-
-				console.warn('------')
-				console.warn(answers.action)
-				console.warn('------')
-				console.warn(answers.issues)
-				
-
         // Apply breaking change prefix, removing it if already present
         var breaking = answers.breaking.trim();
         breaking = breaking ? 'BREAKING CHANGE: ' + breaking.replace( /^BREAKING CHANGE: /, '' ) : '';
         breaking = wrap( breaking, wrapOptions );
         var issues = wrap( answers.issues, wrapOptions );
-        
 
+				console.warn(issues)
         let issuesFormated = ''
-				if (answers.action && answers.issues) {
-          issuesFormated = answers.issues.split(' ').map( function ( el ) { 'TG-' +  el + ' ' + '#' + answers.action + '\n' } )
-        } else if  (answers.issues) {
-					issuesFormated = answers.issues.split(' ').map( function ( el ) { 'TG-' +  el + '\n' } )
+				if (answers.action && issues) {
+          issuesFormated = issues.split(' ').map( function ( el ) { 'TG-' +  el + ' ' + '#' + answers.action + '\n' } )
+        } else if  (issues) {
+					issuesFormated = issues.split(' ').map( function ( el ) { 'TG-' +  el + '\n' } )
 				}
         
         var footer = filter( [ breaking, issuesFormated ] ).join( '\n\n' );
