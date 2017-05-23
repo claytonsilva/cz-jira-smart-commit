@@ -116,10 +116,11 @@ module.exports = function ( options ) {
         breaking = wrap( breaking, wrapOptions );
         var issues = wrap( answers.issues, wrapOptions );
         
+
         let issuesFormated = ''
-				if (answers.status && answers.issues) {
-          issuesFormated = answers.issues.split(' ').map( function ( el ) { 'TG-' +  el + ' ' + '#' + answers.status + '\n' } )
-        } else {
+				if (answers.action && answers.issues) {
+          issuesFormated = answers.issues.split(' ').map( function ( el ) { 'TG-' +  el + ' ' + '#' + answers.action + '\n' } )
+        } else if  (answers.issues) {
 					issuesFormated = answers.issues.split(' ').map( function ( el ) { 'TG-' +  el + '\n' } )
 				}
         
