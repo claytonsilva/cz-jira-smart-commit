@@ -114,13 +114,14 @@ module.exports = function ( options ) {
         breaking = breaking ? 'BREAKING CHANGE: ' + breaking.replace( /^BREAKING CHANGE: /, '' ) : '';
         breaking = wrap( breaking, wrapOptions );
         var issues = wrap( answers.issues, wrapOptions );
+				console.warn(issues)
         let issuesFormated = ''
 				if (answers.action && issues) {
           issuesFormated = issues.split(' ').map( function ( el ) { return 'TG-' +  el + ' ' + '#' + answers.action + '\n' } )
         } else if  (issues) {
 					issuesFormated = issues.split(' ').map( function ( el ) { return 'TG-' +  el + '\n' } )
 				}
-				
+
         var footer = filter( [ breaking, issuesFormated ] ).join( '\n\n' );
 
         commit( head + '\n\n' + body + '\n\n' + footer );
