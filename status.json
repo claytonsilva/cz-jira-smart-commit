@@ -1,0 +1,25 @@
+{
+	"status": {
+		"new": {
+			"description": "novo"
+		},
+		"in-progress": {
+			"description": "Em progresso"
+		},
+		"ready-for-test": {
+			"description": "Pronto para testes"
+		},
+		"closed": {
+			"description": "Fechado"
+		},
+		"needs-info": {
+			"description": "Precisa de mais informações"
+		},
+		"rejected": {
+			"description": "Rejeitado"
+		},
+		"postponed": {
+			"description": "Prorrogado"
+		}
+	}
+}

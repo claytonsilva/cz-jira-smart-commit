@@ -1,7 +1,7 @@
 {
-  "name": "cz-jira-smart-commit",
+  "name": "cz-taiga-smart-commit",
   "version": "2.0.1",
-  "description": "A commitizen adapter for Jira smart commits",
+  "description": "A commitizen adapter for Taiga",
   "main": "index.js",
   "scripts": {
     "start": "nodemon --exec \"npm run test\"",
@@ -12,23 +12,20 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/commitizen/cz-jira-smart-commit.git"
+    "url": "git+https://github.com/claytonsilva/cz-taiga-smart-commit.git"
   },
   "keywords": [
     "commitizen",
     "commitizen adapter",
-    "jira",
-    "jira smart commit"
+    "taiga",
+    "taiga smart commit"
   ],
-  "author": "Kent C. Dodds <kent@doddsfamily.us> (http://kentcdodds.com/)",
-  "contributors": [
-    "Jane Kim <jane@janekim.me> (http://janekim.me)"
-  ],
+  "author": "Clayton Silva",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/commitizen/cz-jira-smart-commit/issues"
+    "url": "https://github.com/claytonsilva/cz-taiga-smart-commit.git/issues"
   },
-  "homepage": "https://github.com/commitizen/cz-jira-smart-commit#readme",
+  "homepage": "https://github.com/claytonsilva/cz-taiga-smart-commit.git#readme",
   "devDependencies": {
     "babel": "5.8.21",
     "chai": "3.2.0",
@@ -40,6 +37,35 @@
     "with-package": "0.2.0"
   },
   "dependencies": {
-    "inquirer": "^1.1.3"
+    "inquirer": "^1.1.3",
+    "lodash.map": "^4.6.0",
+    "longest": "^2.0.0",
+    "right-pad": "^1.0.1",
+    "word-wrap": "^1.2.2"
+  },
+  "config": {
+    "validate-commit-msg": {
+      "types": [
+        "feat",
+        "fix",
+        "docs",
+        "style",
+        "refactor",
+        "perf",
+        "test",
+        "chore",
+        "revert",
+        "ci",
+        "build"
+      ],
+      "warnOnFail": false,
+      "maxSubjectLength": 100,
+      "subjectPattern": ".+",
+      "subjectPatternErrorMsg": "subject does not match subject pattern!",
+      "helpMessage": ""
+    },
+    "commitizen": {
+      "path": "./index"
+    }
   }
 }

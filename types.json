@@ -1,0 +1,37 @@
+{
+	"types": {
+		"feat": {
+			"description": "nova feature"
+		},
+		"fix": {
+			"description": "Correção de bug"
+		},
+		"docs": {
+			"description": "Adição/Edição de documentação"
+		},
+		"style": {
+			"description": "Ajuste de estilo de código (white-space, formatting, missing semi-colons, etc)"
+		},
+		"refactor": {
+			"description": "Mudança nos métodos que não altera seu escopo"
+		},
+		"perf": {
+			"description": "Mudança nos métodos que não altera seu escopo mas resulta em perfomance"
+		},
+		"test": {
+			"description": "Adição/Edição de testes"
+		},
+		"build": {
+			"description": "Changes that affect the build system or external dependencies (example scopes: gulp, broccoli, npm)"
+		},
+		"ci": {
+			"description": "Changes to our CI configuration files and scripts (example scopes: Travis, Circle, BrowserStack, SauceLabs)"
+		},
+		"chore": {
+			"description": "Other changes that don't modify src or test files"
+		},
+		"revert": {
+			"description": "Reverts a previous commit"
+		}
+	}
+}

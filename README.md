@@ -1,6 +1,6 @@
 # cz-jira-smart-commit
 
-A commitizen adapter for [Jira smart commits](https://confluence.atlassian.com/display/FISHEYE/Using+smart+commits).
+A commitizen adapter for [Taiga](https://tree.taiga.io/support/integrations/changing-elements-status-via-commit-message/).
 
 ![Screenshot](other/screenshot.png)
 
@@ -11,14 +11,14 @@ A commitizen adapter for [Jira smart commits](https://confluence.atlassian.com/d
 Install this adapter
 
 ```
-npm install cz-jira-smart-commit
+npm install cz-taiga-smart-commit
 ```
 
 Reference it in your `.cz.json` of your project
 
 ```json
 {
-  "path": "node_modules/cz-jira-smart-commit/"
+  "path": "node_modules/cz-taiga-smart-commit/"
 }
 ```
 
