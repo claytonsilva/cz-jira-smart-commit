@@ -2,6 +2,8 @@
 
 Adaptador do Commitzen para o [Taiga](https://tree.taiga.io/support/integrations/changing-elements-status-via-commit-message/).
 
+Projeto inspirado no cz-jira-smart-commit
+
 ![Screenshot](other/screenshot.png)
 
 ## Como usar
