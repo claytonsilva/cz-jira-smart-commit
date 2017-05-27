@@ -1,4 +1,4 @@
-# cz-jira-smart-commit
+# cz-taiga-smart-commit
 
 Adaptador do Commitzen para o [Taiga](https://tree.taiga.io/support/integrations/changing-elements-status-via-commit-message/).
 
@@ -24,7 +24,7 @@ Cite referencia no `.cz.json` do seu projeto
 
 ou aplique commitzen init
 ```
-commitizen init cz-jira-smart-commit
+commitizen init cz-taiga-smart-commit
 ```
 
 ou adicione no seu package.json
